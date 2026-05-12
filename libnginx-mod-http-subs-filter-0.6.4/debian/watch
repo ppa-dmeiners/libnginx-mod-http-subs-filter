@@ -1,0 +1,6 @@
+Version: 5
+Template: Github
+Owner: yaoweibin
+Project: ngx_http_substitutions_filter_module
+Uversion-Mangle: s/(\d)[_\.\-\+]?((RC|rc|pre|dev|beta|alpha|a|b)\d*)$/$1~$2/
+Pgp-Mode: none

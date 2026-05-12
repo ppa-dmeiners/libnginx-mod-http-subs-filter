@@ -1,0 +1,29 @@
+From b5f4e924efdeb2004acdf8f2632df8a63d4263f1 Mon Sep 17 00:00:00 2001
+From: Indust <603170673m@gmail.com>
+Date: Tue, 12 Apr 2016 13:32:19 +0800
+Subject: [PATCH] check content-encoding header more carefully
+Origin: https://github.com/yaoweibin/ngx_http_substitutions_filter_module/commit/b5f4e924efdeb2004acdf8f2632df8a63d4263f1
+Forwarded: not-needed
+
+---
+ ngx_http_subs_filter_module.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/ngx_http_subs_filter_module.c b/ngx_http_subs_filter_module.c
+index a23b2df..bb48e9d 100644
+--- a/ngx_http_subs_filter_module.c
++++ b/ngx_http_subs_filter_module.c
+@@ -245,7 +245,9 @@ ngx_http_subs_header_filter(ngx_http_request_t *r)
+ 
+     /* Don't do substitution with the compressed content */
+     if (r->headers_out.content_encoding
+-        && r->headers_out.content_encoding->value.len) {
++        && r->headers_out.content_encoding->value.len
++        && ngx_strncasecmp(r->headers_out.content_encoding->value.data,
++                            (u_char *) "identity", 8) != 0) {
+ 
+         ngx_log_error(NGX_LOG_WARN, r->connection->log, 0,
+                       "http subs filter header ignored, this may be a "
+-- 
+2.30.2
+

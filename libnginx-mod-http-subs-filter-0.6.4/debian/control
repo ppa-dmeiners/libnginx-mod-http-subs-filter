@@ -1,0 +1,24 @@
+Source: libnginx-mod-http-subs-filter
+Section: httpd
+Priority: optional
+Maintainer: Debian Nginx Maintainers <pkg-nginx-maintainers@alioth-lists.debian.net>
+Uploaders: Jan Mojžíš <janmojzis@debian.org>,
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-nginx,
+Standards-Version: 4.7.2
+Homepage: https://github.com/yaoweibin/ngx_http_substitutions_filter_module
+Vcs-Git: https://salsa.debian.org/nginx-team/libnginx-mod-http-subs-filter.git
+Vcs-Browser: https://salsa.debian.org/nginx-team/libnginx-mod-http-subs-filter
+Rules-Requires-Root: no
+
+Package: libnginx-mod-http-subs-filter
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Recommends: nginx,
+Description: Substitution filter module for Nginx
+ Substitution Nginx module can do both regular expression and fixed string
+ substitutions on response bodies. The module is quite different from Nginx's
+ native Substitution module. It scans the output chains buffer and
+ matches string line by line, just like Apache's mod_substitute.
