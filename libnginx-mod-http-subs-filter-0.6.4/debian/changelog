@@ -1,3 +1,9 @@
+libnginx-mod-http-subs-filter (1:0.6.4-8+ubuntu24.04.1+deb.meiners.net+1.30.3) noble; urgency=medium
+
+  * New upstream version 1.30.3
+
+ -- David Meiners <david@meiners.net>  Sat, 20 Jun 2026 15:29:00 +0000
+
 libnginx-mod-http-subs-filter (1:0.6.4-8+ubuntu24.04.1+deb.meiners.net+1.30.2) noble; urgency=medium
 
   * New upstream version 1.30.2
